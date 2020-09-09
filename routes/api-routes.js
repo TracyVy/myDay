@@ -2,13 +2,18 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
-// Replace the following routes with postit routes.
-// router.get("/example", (req, res) => {
-//   res.send("message from back end: success");
-// });
+console.log(db);
 
-// router.post("/new", (req, res) => {
-//   db.Todo.create({ text: req.body.text }).then((todo) => res.send(todo));
-// });
+// Replace the following routes with postit routes.
+router.get("/postit", async (req, res) => {
+  const getPostit = await db.Postit.find();
+  res.send(getPostit);
+});
+
+router.post("/postit", async (req, res) => {
+  console.log(req.body);
+  const postPostit = await db.Postit.create(req.body);
+  res.send(postPostit);
+});
 
 module.exports = router;
