@@ -1,0 +1,42 @@
+.forecastApp {
+  width: 600px;
+  border: 8px solid #495867;
+  margin-top: 10px;
+  margin-right: 25px;
+}
+
+.forecastForm {
+  display: grid;
+  font-size: large;
+  border: 1px solid #eeeeee;
+  padding: 5px;
+  border-radius: 3px;
+  margin: 5px auto;
+}
+
+.forecastTextInput {
+  width: 400px;
+}
+
+.forecastTextInput:focus {
+  outline: none;
+  border-color: #719ece;
+  box-shadow: 0 0 5px rgb(50, 100, 153);
+}
+
+.Radio {
+  margin-top: 5px;
+  font-size: small;
+}
+
+.forecastButton {
+  font-size: 13px;
+  background: #53cbf0fd;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  padding: 10px 20px;
+  position: absolute;
+  right: 30px;
+}

@@ -1,0 +1,21 @@
+.centerLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quoteEl {
+  display: flex;
+  right: -200px;
+}
+
+.quoteEl h5 {
+  font-family: Snell Roundhand, cursive;
+  color: #495867;
+  font-display: right;
+}
+
+.quoteEl img {
+  width: 100%;
+  height: auto;
+}

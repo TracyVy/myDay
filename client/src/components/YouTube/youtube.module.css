@@ -1,0 +1,87 @@
+.youtubeApp {
+  width: 700px;
+  margin: 3em;
+  border: 8px solid #495867;
+}
+
+.youtubeForm {
+  display: grid;
+  border: 1px solid #eeeeee;
+  grid-template-columns: 1fr auto;
+  padding: 5px;
+  margin: 5px auto;
+}
+
+.youtubeButton {
+  background: #ff0000;
+  color: #fff;
+  font: inherit;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  padding: 10px 20px;
+  /* position: absolute;
+  right: 30px; */
+}
+
+.youtubeButton:active {
+  background-color: #f14d58dc;
+}
+
+.youtubeInput {
+  border: 1px solid #ff0000;
+  width: 400px;
+  border-radius: 3px;
+  font: inherit;
+  padding: 0.5em;
+  outline: none;
+}
+
+.youtubeInput:focus {
+  outline: auto #f14d58dc;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.items {
+  display: grid;
+  gap: 1em;
+}
+
+.item {
+  background: #fff;
+  padding: 1em;
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px 2px #0002;
+  transition: transform 100ms ease-in-out;
+
+  display: grid;
+  gap: 1em;
+  grid-template:
+    "d i"
+    "m m";
+}
+.item:hover {
+  transform: scale(1.02);
+}
+.item div {
+  grid-area: d;
+}
+.item img {
+  grid-area: i;
+}
+.item ul {
+  grid-area: m;
+}
+
+.meta {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 2em;
+
+  font-size: 50%;
+  color: #555;
+}
