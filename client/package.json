@@ -2,12 +2,14 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://tracyvy.github.io/myDay/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "devextreme": "20.1-stable",
     "devextreme-react": "20.1-stable",
+    "gh-pages": "^3.1.0",
     "node-sass": "^4.11.0",
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.0",
@@ -21,6 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build-themes": "devextreme build",
     "postinstall": "npm run build-themes"
   },
