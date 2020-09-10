@@ -13,9 +13,11 @@
   font-family: Snell Roundhand, cursive;
   color: #495867;
   font-display: right;
+  padding-right: 15px;
 }
 
 .quoteEl img {
   width: 100%;
   height: auto;
+  padding-right: 15px;
 }

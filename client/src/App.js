@@ -6,8 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 import MyDayHeader from "./components/MyDayHeader/MyDayHeader";
-import TextEditor from "./TextEditor/TextEditor";
-// import Postit from "./components/Postit/Postit";
+import Postit from "./components/Postit/Postit";
 import Calendar from "./components/Calendar/Calendar";
 import Forecast from "./components/Weather/Forecast";
 import YouTube from "./components/YouTube/YouTube";
@@ -26,7 +25,7 @@ class App extends React.Component {
               <Forecast />
             </Col>
             <Col>
-              <TextEditor />
+              <Postit />
             </Col>
           </Row>
         </Container>
