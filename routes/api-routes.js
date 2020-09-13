@@ -4,7 +4,7 @@ const db = require("../models");
 
 console.log(db);
 
-// Replace the following routes with postit routes.
+// Postit routes
 router.get("/postit", async (req, res) => {
   const getPostit = await db.Postit.find();
   res.send(getPostit);
@@ -14,6 +14,18 @@ router.post("/postit", async (req, res) => {
   console.log(req.body);
   const postPostit = await db.Postit.create(req.body);
   res.send(postPostit);
+});
+
+// User route
+router.get("/user", async (req, res) => {
+  const getUser = await db.User.find();
+  res.send(getUser);
+});
+
+router.post("/user", async (req, res) => {
+  console.log(req.body);
+  const postUser = await db.user.create(req.body);
+  res.send(postUser);
 });
 
 module.exports = router;

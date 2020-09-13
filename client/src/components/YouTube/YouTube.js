@@ -13,7 +13,8 @@ async function searchYouTube(q) {
       method: "GET",
       headers: {
         "x-rapidapi-host": "youtube-search-results.p.rapidapi.com",
-        "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+        // "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+        "x-rapidapi-key": "b54663a5e6msh64cb43d3524bb21p186d22jsnb6eb1989079a",
       },
     }
   );
@@ -22,7 +23,7 @@ async function searchYouTube(q) {
   return body.items.filter((item) => item.type === "video");
 }
 
-function App() {
+function YouTube() {
   const [query, setQuery] = React.useState("React tutorial");
   const [list, setList] = React.useState(null);
 
@@ -78,4 +79,4 @@ function App() {
   );
 }
 
-export default App;
+export default YouTube;

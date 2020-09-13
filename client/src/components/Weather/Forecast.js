@@ -4,6 +4,8 @@ import classes from "./Forecast.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card } from "react-bootstrap";
 
+console.log(process.env.REACT_APP_API_KEY);
+
 const Forecast = () => {
   let [city, setCity] = useState("");
   let [unit, setUnit] = useState("imperial");

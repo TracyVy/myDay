@@ -1,8 +1,8 @@
 .forecastApp {
-  width: 600px;
-  border: 8px solid #495867;
-  margin-top: 10px;
-  margin-right: 25px;
+  width: 90%;
+  border: 3px solid #495867;
+  margin-top: 80px;
+  margin-left: 40px;
 }
 
 .forecastForm {

@@ -1,46 +1,41 @@
 import React from "react";
 import "./app.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 import MyDayHeader from "./components/MyDayHeader/MyDayHeader";
-import Postit from "./components/Postit/Postit";
+import GoogleOAuth from "./components/Google_Oauth/GoogleOAuth";
 import Calendar from "./components/Calendar/Calendar";
 import Forecast from "./components/Weather/Forecast";
+import Postit from "./components/Postit/Postit";
 import YouTube from "./components/YouTube/YouTube";
-import Bottom from "./components/Bottom/Bottom";
+import Footer from "./components/FooterB/Footer";
 
 class App extends React.Component {
   render() {
     return (
       <div>
         <MyDayHeader />
-
+        <GoogleOAuth />
         <Calendar />
 
-        <Container>
-          <Row>
-            <Col>
-              <Forecast />
-            </Col>
-            <Col>
-              <Postit />
-            </Col>
-          </Row>
-        </Container>
+        <Row>
+          <Col>
+            <Forecast />
+          </Col>
+          <Col>
+            <Postit />
+          </Col>
+        </Row>
 
-        <Container>
-          <Row>
-            <Col>
-              <YouTube />
-            </Col>
-            <Col></Col>
-          </Row>
-        </Container>
+        <Row>
+          <Col>
+            <YouTube />
+          </Col>
+        </Row>
 
-        <Bottom />
+        <Footer />
       </div>
     );
   }
