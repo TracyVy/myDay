@@ -6,7 +6,6 @@
 
 .quoteEl {
   display: flex;
-  right: -200px;
 }
 
 .quoteEl h5 {
@@ -20,4 +19,6 @@
   width: 100%;
   height: auto;
   padding-right: 15px;
+  /* border: 3px solid #b5838d; */
+  box-shadow: 5px 10px 12px #b5838d;
 }

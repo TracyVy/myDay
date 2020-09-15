@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function QuoteFetcher() {
   const [quote, setQuote] = useState("");
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [author, setAuthor] = useState("");
   const [imgSrc, setImgSrc] = useState("");
 

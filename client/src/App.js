@@ -6,11 +6,10 @@ import Col from "react-bootstrap/Col";
 
 import MyDayHeader from "./components/MyDayHeader/MyDayHeader";
 import GoogleOAuth from "./components/Google_Oauth/GoogleOAuth";
-import Calendar from "./components/Calendar/Calendar";
 import Forecast from "./components/Weather/Forecast";
 import Postit from "./components/Postit/Postit";
 import YouTube from "./components/YouTube/YouTube";
-import Footer from "./components/FooterB/Footer";
+import Footer from "./components/Footer/Footer";
 
 class App extends React.Component {
   render() {
@@ -18,7 +17,6 @@ class App extends React.Component {
       <div>
         <MyDayHeader />
         <GoogleOAuth />
-        <Calendar />
 
         <Row>
           <Col>

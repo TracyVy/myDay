@@ -15,7 +15,7 @@ import HtmlEditor, {
   Item,
 } from "devextreme-react/html-editor";
 
-class TextEditor extends React.Component {
+class Postit extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -30,7 +30,7 @@ class TextEditor extends React.Component {
       "Times New Roman",
       "Verdana",
     ];
-    // this.headerValues = [false, 1, 2, 3, 4, 5];
+
     this.enabled = {
       enabled: true,
     };
@@ -91,7 +91,6 @@ class TextEditor extends React.Component {
                 <Item formatName="background" />
                 <Item formatName="separator" />
                 <Item formatName="link" />
-                <Item formatName="image" />
                 <Item formatName="separator" />
               </Toolbar>
             </HtmlEditor>
@@ -108,4 +107,4 @@ class TextEditor extends React.Component {
   }
 }
 
-export default TextEditor;
+export default Postit;

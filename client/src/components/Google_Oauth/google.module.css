@@ -1,0 +1,13 @@
+iframe {
+  padding-top: 20px;
+  width: 100%;
+  height: 800px;
+}
+
+.signOutBtn {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #b5838d;
+  box-shadow: 3px 5px 12px #b5838d;
+  color: #495867;
+}
