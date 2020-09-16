@@ -16,7 +16,8 @@ import HtmlEditor, {
 } from "devextreme-react/html-editor";
 
 class Postit extends React.Component {
-  curEmail = "tracyvy88@gmail.com";
+  // curEmail = "tracyvy88@gmail.com";
+  state = { postitText: "" };
   endpoint = "http://localhost:5000"; //process.env.SERVER_ENDPOINT;
 
   constructor() {
@@ -37,20 +38,10 @@ class Postit extends React.Component {
     this.enabled = {
       enabled: true,
     };
+
     this.valueChanged = this.valueChanged.bind(this);
     this.handleSave = this.handleSave.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
-    this.handleGet();
-  }
-
-  async handleGet() {
-    console.log("handleGet");
-    const response = await axios.get(this.endpoint + "/postit", {
-      params: { email: this.curEmail },
-    });
-    this.setState({
-      postitText: response.data.text,
-    });
+    // this.handleDelete = this.handleDelete.bind(this);
   }
 
   async handleSave() {
@@ -60,9 +51,9 @@ class Postit extends React.Component {
     });
   }
 
-  async handleDelete() {
-    this.setState({ postitText: "" });
-  }
+  // async handleDelete() {
+  //   this.setState({ postitText: "" });
+  // }
 
   valueChanged(e) {
     this.setState({
@@ -70,8 +61,21 @@ class Postit extends React.Component {
     });
   }
 
+  postitTextChanged(val) {
+    //
+    console.log("postitTextChanged=" + val);
+  }
+
+  handleChange(e) {
+    this.setState({ postitText: e.target.value });
+  }
+
   render() {
-    let { postitText } = this.state;
+    // if (this.props.postitText != "") {
+    //   this.state.postitText = this.props.postitText;
+    // }
+    console.log("render", this.state.email);
+    console.log("render", this.state.postitText);
     return (
       <div className={classes.postitApp}>
         <React.Fragment>
@@ -79,7 +83,7 @@ class Postit extends React.Component {
             <h5>Post-It</h5>
             <HtmlEditor
               height="380px"
-              value={postitText}
+              value={this.state.postitText}
               onValueChanged={this.valueChanged}
             >
               <MediaResizing enabled={true} />
@@ -108,12 +112,16 @@ class Postit extends React.Component {
                 <Item formatName="separator" />
               </Toolbar>
             </HtmlEditor>
-            <Button variant="secondary" onClick={this.handleSave}>
+            <Button
+              variant="outline-info"
+              onClick={this.handleSave}
+              style={{ margin: "5px" }}
+            >
               SAVE
             </Button>{" "}
-            <Button variant="danger" onClick={this.handleDelete}>
+            {/* <Button variant="danger" onClick={this.handleDelete}>
               DELETE
-            </Button>
+            </Button> */}
           </div>
         </React.Fragment>
       </div>

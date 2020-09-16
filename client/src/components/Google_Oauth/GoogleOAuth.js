@@ -39,7 +39,7 @@ function appendPre(message) {
   pre.appendChild(textContent);
 }
 
-const GoogleOAuth = () => {
+const GoogleOAuth = ({ onAuthentication }) => {
   const [signIn, setSignIn] = useState(false);
   const [email, setEmail] = useState("example@gmail.com");
   React.useEffect(() => {
@@ -54,6 +54,7 @@ const GoogleOAuth = () => {
       })
       .then((e) => {
         setEmail(e.result.id);
+        onAuthentication(e.result.id);
       });
   }
 
