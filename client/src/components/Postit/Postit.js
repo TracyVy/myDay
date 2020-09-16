@@ -16,6 +16,9 @@ import HtmlEditor, {
 } from "devextreme-react/html-editor";
 
 class Postit extends React.Component {
+  curEmail = "tracyvy88@gmail.com";
+  endpoint = "http://localhost:5000"; //process.env.SERVER_ENDPOINT;
+
   constructor() {
     super();
     this.state = {
@@ -37,13 +40,24 @@ class Postit extends React.Component {
     this.valueChanged = this.valueChanged.bind(this);
     this.handleSave = this.handleSave.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleGet();
+  }
+
+  async handleGet() {
+    console.log("handleGet");
+    const response = await axios.get(this.endpoint + "/postit", {
+      params: { email: this.curEmail },
+    });
+    this.setState({
+      postitText: response.data.text,
+    });
   }
 
   async handleSave() {
-    const response = await axios.post("http://localhost:5000/postit", {
+    const response = await axios.post(this.endpoint + "/postit", {
+      email: this.curEmail,
       text: this.state.postitText,
     });
-    console.log(response);
   }
 
   async handleDelete() {

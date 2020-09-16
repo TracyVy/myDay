@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./Conditions.module.css";
 
-const conditions = (props) => {
+function conditions(props) {
   return (
     <div className={classes.Wrapper}>
       {props.error && (
@@ -22,6 +22,6 @@ const conditions = (props) => {
       ) : null}
     </div>
   );
-};
+}
 
 export default conditions;

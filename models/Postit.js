@@ -7,6 +7,11 @@ const PostitSchema = new Schema({
     trim: true,
     required: "String is required",
   },
+  email: {
+    type: String,
+    trim: true,
+    required: "Email is required",
+  },
 });
 
 const Postit = mongoose.model("Postit", PostitSchema);

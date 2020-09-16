@@ -9,13 +9,13 @@ const CLIENT_ID =
   "522668337222-7ec4busvjmku0dbnpe3s6l951b0mtdd2.apps.googleusercontent.com";
 
 // Array of API discovery doc URLs for APIs used by the quickstart
-var DISCOVERY_DOCS = [
+const DISCOVERY_DOCS = [
   "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
 ];
 
 // Authorization scopes required by the API; multiple scopes can be
 // included, separated by spaces.
-var SCOPES = "https://www.googleapis.com/auth/calendar.events";
+const SCOPES = "https://www.googleapis.com/auth/calendar.events";
 
 // Sign in the user upon button click.
 function handleAuthClick(event) {
@@ -41,7 +41,7 @@ function appendPre(message) {
 
 const GoogleOAuth = () => {
   const [signIn, setSignIn] = useState(false);
-  const [emailID, setEmailID] = useState("example@gmail.com");
+  const [email, setEmail] = useState("example@gmail.com");
   React.useEffect(() => {
     console.log("XXXX - useEffect");
     window.gapi.load("client:auth2", initClient);
@@ -53,8 +53,7 @@ const GoogleOAuth = () => {
         calendarId: "primary",
       })
       .then((e) => {
-        console.log(e.result.id);
-        setEmailID(e.result.id);
+        setEmail(e.result.id);
       });
   }
 
@@ -74,6 +73,7 @@ const GoogleOAuth = () => {
           window.gapi.auth2.getAuthInstance().isSignedIn.listen((e) => {
             setSignIn(e);
             // shortcircuiting if Statement
+            // console.log("My email address is ", e.result.id);
             e && listUpcomingEvents();
           });
         },
@@ -104,7 +104,7 @@ const GoogleOAuth = () => {
       </Row>
 
       <iframe
-        src={`https://calendar.google.com/calendar/embed?src=${emailID}&ctz=America%2FLos_Angeles`}
+        src={`https://calendar.google.com/calendar/embed?src=${email}&ctz=America%2FLos_Angeles`}
         style={{ border: "0" }}
         frameborder="0"
         scrolling="no"

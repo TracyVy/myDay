@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./app.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/Row";
@@ -12,6 +12,8 @@ import YouTube from "./components/YouTube/YouTube";
 import Footer from "./components/Footer/Footer";
 
 class App extends React.Component {
+  //const [email, setEmail] = useState("example@gmail.com");
+
   render() {
     return (
       <div>

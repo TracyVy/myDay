@@ -6,12 +6,12 @@ import { Card } from "react-bootstrap";
 
 console.log(process.env.REACT_APP_API_KEY);
 
-const Forecast = () => {
-  let [city, setCity] = useState("");
-  let [unit, setUnit] = useState("imperial");
-  let [responseObj, setResponseObj] = useState({});
-  let [error, setError] = useState(false);
-  let [loading, setLoading] = useState(false);
+function Forecast() {
+  const [city, setCity] = useState("");
+  const [unit, setUnit] = useState("imperial");
+  const [responseObj, setResponseObj] = useState({});
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const uriEncodedCity = encodeURIComponent(city);
 
@@ -105,6 +105,6 @@ const Forecast = () => {
       </Card>
     </div>
   );
-};
+}
 
 export default Forecast;

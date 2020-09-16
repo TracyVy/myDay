@@ -6,8 +6,11 @@ console.log(db);
 
 // Postit routes
 router.get("/postit", async (req, res) => {
-  const getPostit = await db.Postit.find();
-  res.send(getPostit);
+  console.log("XXX - postit");
+  console.log(req.query.email);
+  const email = req.query.email;
+  const getPostit = await db.Postit.find({ email: email });
+  res.send(getPostit[getPostit.length - 1]);
 });
 
 router.post("/postit", async (req, res) => {
