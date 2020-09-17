@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./app.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import axios from "axios";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 

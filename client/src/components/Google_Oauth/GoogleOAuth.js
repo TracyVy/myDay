@@ -58,7 +58,6 @@ const GoogleOAuth = ({ onAuthentication }) => {
   }
 
   function initClient() {
-    // console.log(window.gapi.auth2.BasicProfile());
     window.gapi.client
       .init({
         apiKey: process.env.GOOGLE_apiKey,
@@ -98,7 +97,7 @@ const GoogleOAuth = ({ onAuthentication }) => {
             id="signout_button"
             className={classes.signOutBtn}
           >
-            Sign Out
+            Reset
           </button>
         </Col>
       </Row>
