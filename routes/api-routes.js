@@ -19,16 +19,4 @@ router.post("/postit", async (req, res) => {
   res.send(postPostit);
 });
 
-// User route
-router.get("/user", async (req, res) => {
-  const getUser = await db.User.find();
-  res.send(getUser);
-});
-
-router.post("/user", async (req, res) => {
-  console.log(req.body);
-  const postUser = await db.user.create(req.body);
-  res.send(postUser);
-});
-
 module.exports = router;
