@@ -21,7 +21,7 @@ class Postit extends React.Component {
     postitText: "",
   };
 
-  endpoint = "https://myday2020.herokuapp.com/";
+  endpoint = "https://myday2020.herokuapp.com";
 
   constructor() {
     super();
@@ -67,6 +67,7 @@ class Postit extends React.Component {
       const response = await axios.get(this.endpoint + "/postit", {
         params: { email: this.state.email },
       });
+      console.log("response.data.text", response);
       this.setState({ postitText: response.data.text });
     }
   }
