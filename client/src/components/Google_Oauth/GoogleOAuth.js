@@ -5,8 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import GoogleButton from "react-google-button";
 
-const CLIENT_ID =
-  "522668337222-7ec4busvjmku0dbnpe3s6l951b0mtdd2.apps.googleusercontent.com";
+const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
 
 // Array of API discovery doc URLs for APIs used by the quickstart
 const DISCOVERY_DOCS = [
@@ -62,14 +61,14 @@ const GoogleOAuth = ({ onAuthentication }) => {
     // console.log(window.gapi.auth2.BasicProfile());
     window.gapi.client
       .init({
-        apiKey: "AIzaSyBIa7trpR0-6xMIs44G5PkTqGtE71O1jLU",
+        apiKey: process.env.GOOGLE_apiKey,
         clientId: CLIENT_ID,
         discoveryDocs: DISCOVERY_DOCS,
         scope: SCOPES,
       })
       .then(
-        function (e) {
-          console.log("XX - Client is connected", e);
+        function () {
+          console.log("XX - Client is connected");
           // Listen for sign-in state changes.
           window.gapi.auth2.getAuthInstance().isSignedIn.listen((e) => {
             setSignIn(e);

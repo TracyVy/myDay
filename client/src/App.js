@@ -26,7 +26,7 @@ function App() {
 
   async function getPostItText(curEmail) {
     console.log("handleGet");
-    const endpoint = "http://localhost:5000"; //process.env.SERVER_ENDPOINT;
+    const endpoint = "https://myday2020.herokuapp.com/";
     const response = await axios.get(endpoint + "/postit", {
       params: { email: curEmail },
     });

@@ -1,4 +1,4 @@
 module.exports = {
   Postit: require("./Postit"),
-  User: require("./User.js"),
+  //User: require("./User.js"),
 };
