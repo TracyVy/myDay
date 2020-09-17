@@ -21,7 +21,7 @@ class Postit extends React.Component {
     postitText: "",
   };
 
-  endpoint = "http://localhost:5000"; //process.env.SERVER_ENDPOINT;
+  endpoint = "https://myday2020.herokuapp.com/";
 
   constructor() {
     super();
