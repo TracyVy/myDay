@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 import MyDayHeader from "./components/MyDayHeader/MyDayHeader";
-import GoogleOAuth from "./components/Google_Oauth/GoogleOAuth";
+// import GoogleOAuth from "./components/Google_Oauth/GoogleOAuth";
 import Forecast from "./components/Weather/Forecast";
 import Postit from "./components/Postit/Postit";
 import YouTube from "./components/YouTube/YouTube";
@@ -37,7 +37,7 @@ function App() {
   return (
     <div>
       <MyDayHeader />
-      <GoogleOAuth onAuthentication={handleAuthentication} />
+      {/* <GoogleOAuth onAuthentication={handleAuthentication} /> */}
 
       <Row>
         <Col>
