@@ -16,8 +16,11 @@ import HtmlEditor, {
 } from "devextreme-react/html-editor";
 
 class Postit extends React.Component {
-  // curEmail = "tracyvy88@gmail.com";
-  state = { postitText: "" };
+  state = {
+    email: "",
+    postitText: "",
+  };
+
   endpoint = "http://localhost:5000"; //process.env.SERVER_ENDPOINT;
 
   constructor() {
@@ -41,19 +44,14 @@ class Postit extends React.Component {
 
     this.valueChanged = this.valueChanged.bind(this);
     this.handleSave = this.handleSave.bind(this);
-    // this.handleDelete = this.handleDelete.bind(this);
   }
 
   async handleSave() {
     const response = await axios.post(this.endpoint + "/postit", {
-      email: this.curEmail,
+      email: this.state.email,
       text: this.state.postitText,
     });
   }
-
-  // async handleDelete() {
-  //   this.setState({ postitText: "" });
-  // }
 
   valueChanged(e) {
     this.setState({
@@ -61,21 +59,19 @@ class Postit extends React.Component {
     });
   }
 
-  postitTextChanged(val) {
-    //
-    console.log("postitTextChanged=" + val);
-  }
+  async componentDidUpdate(prevProps, prevState) {
+    console.log("componentDidUpdate", prevProps.email, this.props.email);
 
-  handleChange(e) {
-    this.setState({ postitText: e.target.value });
+    if (this.state.email != this.props.email) {
+      this.state.email = this.props.email;
+      const response = await axios.get(this.endpoint + "/postit", {
+        params: { email: this.state.email },
+      });
+      this.setState({ postitText: response.data.text });
+    }
   }
 
   render() {
-    // if (this.props.postitText != "") {
-    //   this.state.postitText = this.props.postitText;
-    // }
-    console.log("render", this.state.email);
-    console.log("render", this.state.postitText);
     return (
       <div className={classes.postitApp}>
         <React.Fragment>
@@ -119,9 +115,6 @@ class Postit extends React.Component {
             >
               SAVE
             </Button>{" "}
-            {/* <Button variant="danger" onClick={this.handleDelete}>
-              DELETE
-            </Button> */}
           </div>
         </React.Fragment>
       </div>
