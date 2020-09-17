@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "homepage": "https://myapp.herokuapp.com/",
+  "homepage": "https://myday2020.herokuapp.com/",
   "dependencies": {
     "concurrently": "^5.3.0",
     "dotenv": "^8.2.0",
