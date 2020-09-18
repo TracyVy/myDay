@@ -20,7 +20,7 @@
     "server": "nodemon server.js",
     "dev": "concurrently \"nodemon server.js\" \"npm run client\"",
     "heroku-postbuild": "npm run install-client",
-    "install-client": "cd client && npm install && npm rebuild node-sass && npm run build"
+    "install-client": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
