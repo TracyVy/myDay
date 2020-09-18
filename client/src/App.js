@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./app.css";
-import "./components/Footer/node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 

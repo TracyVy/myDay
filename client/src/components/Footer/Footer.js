@@ -1,5 +1,4 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./footer.module.css";
 
 import classes from "./footer.module.css";
