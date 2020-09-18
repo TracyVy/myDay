@@ -1,7 +1,6 @@
 import React from "react";
 
 import "./youtube.module.css";
-import "../Footer/node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Card } from "react-bootstrap";
 import classes from "./youtube.module.css";
 

@@ -1,6 +1,5 @@
 import React from "react";
 import classes from "./Postit.module.css";
-import "../Footer/node_modules/bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
 
