@@ -9,7 +9,7 @@ import GoogleOAuth from "./components/Google_Oauth/GoogleOAuth";
 import Forecast from "./components/Weather/Forecast";
 import Postit from "./components/Postit/Postit";
 import YouTube from "./components/YouTube/YouTube";
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/FooterX/FooterX";
 
 function App() {
   const [email, setEmail] = useState("example@gmail.com");
