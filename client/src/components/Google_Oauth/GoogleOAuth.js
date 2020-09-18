@@ -70,7 +70,9 @@ const GoogleOAuth = ({ onAuthentication }) => {
           console.log("XX - Client is connected");
           // Listen for sign-in state changes.
           console.log(window.gapi.auth2);
-          window.gapi.auth2.getAuthInstance().isSignedIn.listen((e) => {
+          const authInstance = window.gapi.auth2.getAuthInstance();
+          console.log("XXX - authInstance: ", authInstance);
+          authInstance.isSignedIn.listen((e) => {
             setSignIn(e);
             // shortcircuiting if Statement
             // console.log("My email address is ", e.result.id);
