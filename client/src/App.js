@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./app.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./components/Footer/node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
@@ -9,7 +9,7 @@ import GoogleOAuth from "./components/Google_Oauth/GoogleOAuth";
 import Forecast from "./components/Weather/Forecast";
 import Postit from "./components/Postit/Postit";
 import YouTube from "./components/YouTube/YouTube";
-import Footer from "./components/FooterX/FooterX";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [email, setEmail] = useState("example@gmail.com");

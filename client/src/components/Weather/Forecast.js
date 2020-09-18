@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Conditions from "./Conditions";
 import classes from "./Forecast.module.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "../Footer/node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Card } from "react-bootstrap";
 
 console.log(process.env.REACT_APP_API_KEY);
