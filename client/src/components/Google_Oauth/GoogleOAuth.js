@@ -16,16 +16,6 @@ const DISCOVERY_DOCS = [
 // included, separated by spaces.
 const SCOPES = "https://www.googleapis.com/auth/calendar.events";
 
-// Sign in the user upon button click.
-function handleAuthClick(event) {
-  window.gapi.auth2.getAuthInstance().signIn();
-}
-
-// Sign out the user upon button click.
-function handleSignoutClick(event) {
-  window.gapi.auth2.getAuthInstance().signOut();
-}
-
 /**
  * Append a pre element to the body containing the given message
  * as its text node. Used to display the results of the API call.
@@ -40,7 +30,7 @@ function appendPre(message) {
 
 const GoogleOAuth = ({ onAuthentication }) => {
   const [signIn, setSignIn] = useState(false);
-  const [email, setEmail] = useState("example@gmail.com");
+  const [email, setEmail] = useState("");
   React.useEffect(() => {
     console.log("XXXX - useEffect");
     window.gapi.load("client:auth2", initClient);
@@ -85,6 +75,17 @@ const GoogleOAuth = ({ onAuthentication }) => {
       );
   }
 
+  // Sign in the user upon button click.
+  function handleAuthClick(event) {
+    window.gapi.auth2.getAuthInstance().signIn();
+  }
+
+  // Sign out the user upon button click.
+  function handleSignoutClick(event) {
+    window.gapi.auth2.getAuthInstance().signOut();
+    setEmail("");
+  }
+
   return (
     <div>
       <Row>
@@ -105,12 +106,14 @@ const GoogleOAuth = ({ onAuthentication }) => {
         </Col>
       </Row>
 
-      <iframe
-        src={`https://calendar.google.com/calendar/embed?src=${email}&ctz=America%2FLos_Angeles`}
-        style={{ border: "0" }}
-        frameborder="0"
-        scrolling="no"
-      ></iframe>
+      {email && (
+        <iframe
+          src={`https://calendar.google.com/calendar/embed?src=${email}&ctz=America%2FLos_Angeles`}
+          style={{ border: "0" }}
+          frameborder="0"
+          scrolling="no"
+        ></iframe>
+      )}
     </div>
   );
 };
