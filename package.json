@@ -19,8 +19,8 @@
     "client": "npm start --prefix client",
     "server": "nodemon server.js",
     "dev": "concurrently \"nodemon server.js\" \"npm run client\"",
-    "heroku-postbuild": "npm run install-client && npm run build --prod",
-    "install-client": "cd client && npm install && npm run build"
+    "heroku-postbuild": "npm run install-client",
+    "install-client": "cd client && npm install && npm rebuild node-sass && npm run build"
   },
   "keywords": [],
   "author": "",
